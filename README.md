@@ -54,12 +54,22 @@ Server will be opened in the Port No.
 
 
 # Step 5 Running the Queries
-
+# Query 01
 query {
 
   hello
   
 }
+
+# Query 2
+
+query {
+
+  add(a: 5, b: 3)
+  
+}
+
+
 
 
 
