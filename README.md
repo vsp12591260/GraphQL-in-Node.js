@@ -45,3 +45,9 @@ startServer();
 
 
 ```
+
+# Step 3 Run Server
+
+``` node server.js
+```
+
