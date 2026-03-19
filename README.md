@@ -17,3 +17,10 @@ When handling a query, the server:
 Validates the query.
 Resolves fields using resolvers.
 Returns the resulting data.
+
+# Creating the Basic GraphQL Server
+In this section, we'll set up a step-by-step basic GraphQL server using Apollo Server 4.
+Import Apollo Server and GraphQL types:
+
+import { ApolloServer } from '@apollo/server';
+import { startStandaloneServer } from '@apollo/server/standalone';
