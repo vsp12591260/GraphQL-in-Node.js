@@ -10,7 +10,7 @@ npm install @apollo/server graphql
 ```const { ApolloServer } = require('@apollo/server');
 const { startStandaloneServer } = require('@apollo/server/standalone');
 
-// 1. Define Schema (NO gql needed)
+// 1. Define Schema
 const typeDefs = `
   type Query {
     hello: String
