@@ -1,8 +1,3 @@
-🚀 Step 1: Install Dependencies
-Run this in your project folder:
-npm init -y
-npm install @apollo/server graphql
-📁 Step 2: Create index.js
 const { ApolloServer } = require('@apollo/server');
 const { startStandaloneServer } = require('@apollo/server/standalone');
 
@@ -38,28 +33,3 @@ async function startServer() {
 }
 
 startServer();
-▶️ Step 3: Run Server
-node index.js
-🌐 Step 4: Open in Browser
-Go to:
-http://localhost:4000
-🧪 Example Queries
-✅ Query 1
-query {
-  hello
-}
-✅ Query 2
-query {
-  add(a: 5, b: 3)
-}
-🎯 Output
-{
-  "data": {
-    "hello": "Hello Vivek 🚀"
-  }
-}
-{
-  "data": {
-    "add": 8
-  }
-}
