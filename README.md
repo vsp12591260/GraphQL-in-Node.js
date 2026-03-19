@@ -1,7 +1,7 @@
 Step 1: Install Dependencies
 Run this in your project folder:
-''' npm init -y
-npm install @apollo/server graphql'''
+ ### npm init -y
+npm install @apollo/server graphql
  Step 2: Create index.js
 const { ApolloServer } = require('@apollo/server');
 const { startStandaloneServer } = require('@apollo/server/standalone');
