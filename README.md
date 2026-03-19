@@ -48,6 +48,18 @@ startServer();
 
 # Step 3 Run Server
 
-``` node server.js
-```
+Run the Server (using node index.js)
+
+Server will be opened in the Port No. 
+
+
+# Step 5 Running the Queries
+
+query {
+
+  hello
+  
+}
+
+
 
