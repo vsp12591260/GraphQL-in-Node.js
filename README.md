@@ -1,26 +1,65 @@
-# GraphQL and Apollo Server
+🚀 Step 1: Install Dependencies
+Run this in your project folder:
+npm init -y
+npm install @apollo/server graphql
+📁 Step 2: Create index.js
+const { ApolloServer } = require('@apollo/server');
+const { startStandaloneServer } = require('@apollo/server/standalone');
 
-GraphQL is a query language for APIs that allows you to request only the data you need, unlike REST, which often requires multiple endpoints. While REST typically requires multiple endpoints for different resources (e.g., /users, /users/:id/orders), GraphQL consolidates everything into a single endpoint (e.g., /graphql). Clients interact with the server through this single endpoint, providing queries that define what data to retrieve, which solves the issue of over-fetching (too much data) or under-fetching (too little data).
+// 1. Define Schema (NO gql needed)
+const typeDefs = `
+  type Query {
+    hello: String
+    add(a: Int, b: Int): Int
+  }
+`;
 
-# Apollo Server is a popular, GraphQL-compliant server known for its simplicity and active support. Other tools available include:
-# Express-GraphQL: A flexible GraphQL server for Express applications.
-# Relay: A JavaScript framework for efficient data fetching with GraphQL.
+// 2. Define Resolvers
+const resolvers = {
+  Query: {
+    hello: () => "Hello Vivek 🚀",
+    add: (_, args) => args.a + args.b,
+  },
+};
 
-# Basic Structure of a GraphQL Server
+// 3. Create Server
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
-The key components of a GraphQL server are:
+// 4. Start Server
+async function startServer() {
+  const { url } = await startStandaloneServer(server, {
+    listen: { port: 4000 },
+  });
 
-Schema: Defines data types and the shape of queries. For example, a Query type with a hello field that returns a String.
-Resolvers: Functions that fetch data as per the schema. For example, the resolver for hello returns "Hello, GraphQL!".
+  console.log(`🚀 Server ready at ${url}`);
+}
 
-When handling a query, the server:
-Validates the query.
-Resolves fields using resolvers.
-Returns the resulting data.
-
-# Creating the Basic GraphQL Server
-In this section, we'll set up a step-by-step basic GraphQL server using Apollo Server 4.
-Import Apollo Server and GraphQL types:
-
-import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer } from '@apollo/server/standalone';
+startServer();
+▶️ Step 3: Run Server
+node index.js
+🌐 Step 4: Open in Browser
+Go to:
+http://localhost:4000
+🧪 Example Queries
+✅ Query 1
+query {
+  hello
+}
+✅ Query 2
+query {
+  add(a: 5, b: 3)
+}
+🎯 Output
+{
+  "data": {
+    "hello": "Hello Vivek 🚀"
+  }
+}
+{
+  "data": {
+    "add": 8
+  }
+}
