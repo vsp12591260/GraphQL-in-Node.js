@@ -8,7 +8,7 @@ GraphQL is a query language for APIs that allows you to request only the data yo
 
 # Basic Structure of a GraphQL Server
 
-# The key components of a GraphQL server are:
+The key components of a GraphQL server are:
 
 Schema: Defines data types and the shape of queries. For example, a Query type with a hello field that returns a String.
 Resolvers: Functions that fetch data as per the schema. For example, the resolver for hello returns "Hello, GraphQL!".
